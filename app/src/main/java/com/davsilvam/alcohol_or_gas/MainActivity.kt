@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -62,7 +63,7 @@ fun Home(modifier: Modifier = Modifier) {
     var alcoholText by remember { mutableStateOf("") }
     var gasText by remember { mutableStateOf("") }
     var gasStationName by remember { mutableStateOf("") }
-    var use75Percent by remember { mutableStateOf(false) }
+    var use75Percent by rememberSaveable { mutableStateOf(false) }
     var resultMessage by remember { mutableStateOf("") }
 
     val threshold = if (use75Percent) 0.75 else 0.7
